@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping en ligne</title>
+    <link rel="stylesheet" href="panier.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mon Shopping</div>
+        
+        <nav>
+            <ul>
+                <li><a href="shooping.html">Accueil</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--li><a href="#cart">Panier (<span id="cart-count">0</span>)</a></li-->
+                <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="votrepanier">
+        <h1>Votre Panier</h1>
+        <a href="shooping.html">🏠 Retour à la boutique</a>
+    </section>
+
+
+
+
+
+    <main>
+        <section class="cart-section">
+            <h2>Votre Panier</h2>
+            <!--ul id="cart-items"></ul>
+            <p><strong>Total :</strong> <span id="total-price">0</span> €</p>
+            <button onclick="clearCart()">Vider le panier</button-->
+
+                <ul id="cart-items"></ul>
+                <p>Total : <span id="total-price">0</span> €</p>
+                <p>Articles dans le panier : <span id="cart-count">0</span></p>
+                <button onclick="clearCart()">Vider le panier</button>
+        </section>
+    </main>
+
+
+
+
+    <!--main>
+        <section class="cart-section">
+            <h2>Votre Panier</h2>
+            <ul id="cart-items"></ul>
+            <p>Total : <span id="total-price">0</span> €</p>
+            <button onclick="clearCart()">Vider le panier</button>
+        </section>
+    </main-->
+
+    <!--script>
+        let cart = []; // Déclare la variable cart pour stocké les produit Chaque objet représente un produit avec { id, name, price, quantity }.
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            cartList.innerHTML = ""; // On vide la liste avant de la remplir
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.textContent = `${item.name} - ${item.price}€ x ${item.quantity}`;
+
+                // Bouton pour supprimer un article
+                const removeBtn = document.createElement("button");
+                removeBtn.textContent = "Retirer";
+                removeBtn.onclick = () => {
+                    removeFromCart(item.id);
+                };
+
+                li.appendChild(removeBtn);
+                cartList.appendChild(li);
+
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2); // Mise à jour du prix total
+            cartCountElement.textContent = totalCount; // Mise à jour du nombre d'articles
+        }
+        
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            if (!cartList || !totalPriceElement || !cartCountElement) {
+                console.error("Les éléments HTML du panier sont introuvables !");
+                return;
+            }
+
+            cartList.innerHTML = ""; // Vider la liste avant de la remplir
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span><strong>${item.name}</strong> - ${item.price}€ x ${item.quantity} = <b>${(item.price * item.quantity).toFixed(2)}€</b></span>
+                    <button onclick="removeFromCart(${index})">❌</button>
+                `;
+
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+            cartCountElement.textContent = totalCount;
+        }
+
+        // Sauvegarder le panier dans le stockage local
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        // Modifier addToCart() pour sauvegarder les données
+        function addToCart(id, name, price) {
+            const item = cart.find(product => product.id === id);
+            
+            if (item) {
+                item.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+
+            saveCart();
+            updateCart();
+        }
+
+        // Modifier removeFromCart() pour sauvegarder après suppression
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            saveCart();
+            updateCart();
+        }
+
+        // Modifier clearCart() pour vider le stockage local
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem("cart");
+            updateCart();
+        }
+
+        // Charger le panier au démarrage
+        
+        // Charger les produits depuis localStorage
+        //let cart = []; // Déclare la variable cart
+
+        function loadCart() {
+            
+            const storedCart = localStorage.getItem("cart"); //récupère les données stockées dans localStorage sous la clé "cart". Si des données existent (storedCart n'est pas null), elles sont converties de JSON en tableau JavaScript grâce à JSON.parse(storedCart). Si localStorage est vide (null), on initialise cart avec un tableau vide [].
+            //Ensuite, elle appelle updateCart() pour mettre à jour l'affichage du panier.
+            cart = storedCart ? JSON.parse(storedCart) : [];
+            console.log("Données récupérées du LocalStorage :", storedCart);
+            updateCart();
+        }
+
+
+
+
+
+
+
+       /* function loadCart() {
+            const storedCart = localStorage.getItem("cart");
+            try {
+                cart = storedCart ? JSON.parse(storedCart) : [];
+            } catch (error) {
+                console.error("Erreur lors du chargement du panier :", error);
+                cart = [];
+            }
+            updateCart();
+        }*/
+
+
+
+
+        // Sauvegarder les données du panier dans le localStorage Cette fonction convertit le panier en chaîne JSON avec JSON.stringify(cart).
+        //Elle enregistre ces données dans localStorage sous la clé "cart".
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        // Mettre à jour l'affichage du panier
+        /*function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            cartList.innerHTML = ""; // Vider l'affichage actuel
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span><strong>${item.name}</strong> - ${item.price}€ x ${item.quantity} = <b>${(item.price * item.quantity).toFixed(2)}€</b></span>
+                    <button onclick="removeFromCart(${index})">❌</button>
+                `;
+
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2); // Mise à jour du prix total
+            cartCountElement.textContent = totalCount; // Mise à jour du nombre d'articles
+        }*///addToCart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*Récupère les éléments HTML où seront affichés les produits (cart-items), le prix total (total-price) et le nombre d'articles (cart-count).
+        Vérifie si les éléments HTML existent, sinon affiche une erreur.
+        Vide la liste avant de l'actualiser.
+        Pour chaque produit dans cart :
+        Crée un élément <li> pour afficher le nom, prix et quantité.
+        Ajoute un bouton "❌" pour permettre la suppression du produit.
+        Met à jour le prix total et le nombre total d'articles.
+        Met à jour le DOM avec les nouvelles valeurs.*/
+        function updateCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            if (!cartList || !totalPriceElement || !cartCountElement) {
+                console.error("Les éléments HTML du panier sont introuvables !");
+                return;
+            }
+
+            cartList.innerHTML = ""; // Vider la liste avant de la remplir
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span><strong>${item.name}</strong> - ${item.price}€ x ${item.quantity} = <b>${(item.price * item.quantity).toFixed(2)}€</b></span>
+                    <button onclick="removeFromCart(${index})">❌</button>
+                `;
+
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+            cartCountElement.textContent = totalCount;
+        }
+
+
+
+
+
+
+
+
+        // Ajouter un produit au panier
+        /*find() cherche si un produit avec le même id existe dans le panier.
+        Si le produit est déjà dans le panier, on incrémente simplement sa quantité.
+        Sinon, on ajoute un nouvel objet { id, name, price, quantity: 1 } dans le tableau cart.
+        On appelle saveCart() pour sauvegarder les changements et updateCart() pour mettre à jour l'affichage.*/
+        function addToCart(id, name, price) {
+            let existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+
+            saveCart();
+            updateCart();
+        }
+
+
+
+
+        // Retirer un produit du panier
+        /*Supprime l'élément du tableau cart à l'index spécifié.
+        Appelle saveCart() pour sauvegarder dans localStorage.
+        Met à jour l'affichage du panier.
+        */
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            saveCart();
+            updateCart();
+        }
+
+        // Vider le panier
+        /*Réinitialise cart en tableau vide [].
+        Supprime "cart" de localStorage avec removeItem().
+        Met à jour l'affichage.
+        */
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem("cart");
+            updateCart();
+        }
+
+
+
+
+
+        /*Lorsque la page est complètement chargée, loadCart() est exécutée.
+        Cela permet d'afficher les produits qui étaient stockés dans localStorage.*/
+        document.addEventListener("DOMContentLoaded", loadCart);
+        /*let cart = [];
+        loadCart();*/
+    </script-->
+
+    <script>
+        /*function loadCart() {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            let cart = localStorage.getItem("cart");
+            cart = cart ? JSON.parse(cart) : [];
+
+            cartList.innerHTML = "";
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span><b>ID:</b> ${item.id} | <b>${item.name}</b> - ${item.price}€ x ${item.quantity} = <b>${(item.price * item.quantity).toFixed(2)}€</b></span>
+                    <button onclick="removeFromCart(${index})">❌</button>
+                `;
+
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2);
+            cartCountElement.textContent = totalCount;
+        }*/
+
+
+        function loadCart() {
+            let cart = localStorage.getItem("cart");
+            console.log("Données récupérées du LocalStorage :", cart);
+            
+            cart = cart ? JSON.parse(cart) : [];
+
+            if (cart.length === 0) {
+                console.warn("⚠️ Le panier est vide !");
+            }
+            
+            updateCartDisplay(cart);
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart();
+        }
+        function updateCartDisplay(cart) {
+            const cartList = document.getElementById("cart-items");
+            const totalPriceElement = document.getElementById("total-price");
+            const cartCountElement = document.getElementById("cart-count");
+
+            if (!cartList || !totalPriceElement || !cartCountElement) {
+                console.error("❌ Les éléments HTML du panier sont introuvables !");
+                return;
+            }
+
+            cartList.innerHTML = ""; // Vider l'affichage actuel
+            let totalPrice = 0;
+            let totalCount = 0;
+
+            cart.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <span><strong>${item.name}</strong> - ${item.price}€ x ${item.quantity} = <b>${(item.price * item.quantity).toFixed(2)}€</b></span>
+                    <button onclick="removeFromCart(${index})">❌</button>
+                `;
+
+                cartList.appendChild(li);
+                totalPrice += item.price * item.quantity;
+                totalCount += item.quantity;
+            });
+
+            totalPriceElement.textContent = totalPrice.toFixed(2); // Met à jour le prix total
+            cartCountElement.textContent = totalCount; // Met à jour le nombre total d'articles
+        }
+        document.addEventListener("DOMContentLoaded", loadCart);
+    </script>
+
+</body>
+</html>

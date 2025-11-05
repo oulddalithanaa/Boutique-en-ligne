@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping en ligne</title>
+    <link rel="stylesheet" href="shooping.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mon Shopping</div>
+        
+        <nav>
+            <ul>
+                <li><a href="shooping.html">Accueil</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!--li><a href="#cart">Panier (<span id="cart-count">0</span>)</a></li-->
+                <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue sur notre boutique</h1>
+                <p>Découvrez nos derniers produits <br> et offres spéciales</p>
+                <a href="#products" class="btn">Voir la boutique</a>
+            </div>
+        </section>
+
+
+
+
+        <section class="bienvenue">
+                <h1>Nos produits</h1>
+            
+
+
+
+
+        <section id="products" class="products">
+            <div class="product" data-id="1" data-name="Produit 1" data-price="10">
+                <img src="images/ph1.jpg" alt="Produit 1" >
+                <h2>Produit 1</h2>
+                <p>Prix: 10€</p>
+                <button onclick="addToCart(1, 'Produit 1', 10)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="2" data-name="Produit 2" data-price="20">
+                <img src="images/ph2.jpg" alt="Produit 2">
+                <h2>Produit 2</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(2, 'Produit 2', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="3" data-name="Produit 3" data-price="20">
+                <img src="images/ph3.jpg" alt="Produit 3">
+                <h2>Produit 3</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(3, 'Produit 3', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="4" data-name="Produit 4" data-price="20">
+                <img src="images/ph4.jpg" alt="Produit 4">
+                <h2>Produit 4</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(4, 'Produit 4', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="5" data-name="Produit 5" data-price="20">
+                <img src="images/ph5.jpg" alt="Produit 5">
+                <h2>Produit 5</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(5, 'Produit 5', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="6" data-name="Produit 6" data-price="20">
+                <img src="images/ph6.jpg" alt="Produit 6">
+                <h2>Produit 6</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(6, 'Produit 6', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="7" data-name="Produit 7" data-price="20">
+                <img src="images/ph7.jpg" alt="Produit 7">
+                <h2>Produit 7</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(7, 'Produit 7', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="8" data-name="Produit 8" data-price="20">
+                <img src="images/ph8.jpg" alt="Produit 8">
+                <h2>Produit 8</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(8, 'Produit 8', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="9" data-name="Produit 9" data-price="20">
+                <img src="images/ph9.jpg" alt="Produit 1">
+                <h2>Produit 9</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(9, 'Produit 9', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="5" data-name="Produit 10" data-price="20">
+                <img src="images/ph10.jpg" alt="Produit 10">
+                <h2>Produit 10</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(10, 'Produit 10', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="11" data-name="Produit 11" data-price="20">
+                <img src="images/ph11.jpg" alt="Produit 11">
+                <h2>Produit 11</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(11, 'Produit 11', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="12" data-name="Produit 12" data-price="20">
+                <img src="images/ph12.jpg" alt="Produit 12">
+                <h2>Produit 12</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(12, 'Produit 12', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="13" data-name="Produit 13" data-price="20">
+                <img src="images/ph13.jpg" alt="Produit 13">
+                <h2>Produit 13</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(13, 'Produit 13', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="14" data-name="Produit 14" data-price="20">
+                <img src="images/ph14.jpg" alt="Produit 14">
+                <h2>Produit 14</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(14, 'Produit 14', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="15" data-name="Produit 15" data-price="20">
+                <img src="images/ph15.jpg" alt="Produit 15">
+                <h2>Produit 15</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(15, 'Produit 15', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="16" data-name="Produit 16" data-price="20">
+                <img src="images/ph16.jpg" alt="Produit 16">
+                <h2>Produit 16</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(16, 'Produit 16', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="17" data-name="Produit 17" data-price="20">
+                <img src="images/ph17.jpg" alt="Produit 17">
+                <h2>Produit 17</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(17, 'Produit 17', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="18" data-name="Produit 18" data-price="20">
+                <img src="images/ph18.jpg" alt="Produit 18">
+                <h2>Produit 18</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(18, 'Produit 18', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="19" data-name="Produit 19" data-price="20">
+                <img src="images/ph19.jpg" alt="Produit 19">
+                <h2>Produit 19</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(19, 'Produit 19', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="20" data-name="Produit 20" data-price="20">
+                <img src="images/ph20.jpg" alt="Produit 20">
+                <h2>Produit 20</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(20, 'Produit 20', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="21" data-name="Produit 21" data-price="20">
+                <img src="images/ph21.jpg" alt="Produit 21">
+                <h2>Produit 21</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(21, 'Produit 21', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="22" data-name="Produit 22" data-price="20">
+                <img src="images/ph22.jpg" alt="Produit 22">
+                <h2>Produit 22</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(22, 'Produit 22', 20)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="23" data-name="Produit 23" data-price="20">
+                <img src="images/ph23.jpg" alt="Produit 23">
+                <h2>Produit 23</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(23, 'Produit 23', 20)">Ajouter au panier</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mon Shopping. Tous droits réservés.</p>
+    </footer>
+    <script >
+        // Initialisation du panier
+        let cart = [];
+
+        // Fonction pour ajouter un produit au panier
+        function addToCart(id, name, price) {
+            let product = cart.find(item => item.id === id);
+            
+            if (product) {
+                product.quantity++;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            
+            updateCartCount();
+            showNotification(`${name} ajouté au panier !`);
+        }
+
+        // Met à jour le nombre d'articles dans le panier
+        function updateCartCount() {
+            let count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        // Affiche une notification lors de l'ajout d'un produit
+        function showNotification(message) {
+            let notification = document.createElement('div');
+            notification.classList.add('notification');
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Effet smooth scroll pour les liens internes
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(event) {
+                event.preventDefault();
+                let target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 60,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

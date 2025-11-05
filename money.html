@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping en ligne</title>
+    <link rel="stylesheet" href="shooping.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur notre boutique</h1>
+        <div id="cart">Panier: <span id="cart-count">0</span></div>
+    </header>
+    <main>
+        <div class="products">
+            <div class="product" data-id="1" data-name="Produit 1" data-price="10">
+                <h2>Produit 1</h2>
+                <p>Prix: 10€</p>
+                <button onclick="addToCart(1, 'Produit 1', 10)">Ajouter au panier</button>
+            </div>
+            <div class="product" data-id="2" data-name="Produit 2" data-price="20">
+                <h2>Produit 2</h2>
+                <p>Prix: 20€</p>
+                <button onclick="addToCart(2, 'Produit 2', 20)">Ajouter au panier</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

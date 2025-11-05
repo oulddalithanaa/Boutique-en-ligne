@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="shooping.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Mon Shopping</div>
+        <nav>
+            <ul>
+                <li><a href="shooping.html">Accueil</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="panier.html">Panier (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+
+    <section>
+        <h2>🛒 Votre Panier</h2>
+        <section id="cart-items"></section>
+        <p>Total: <span id="total-price">0</span>€</p>
+        <button onclick="localStorage.removeItem('cart'); updateCartDisplay();">Vider le panier</button>
+    </section>
+
+
+    <script>
+        // Charger et afficher les produits du panier
+        function loadCart() {
+            let cart = localStorage.getItem("cart");
+            cart = cart ? JSON.parse(cart) : [];
+            let cartContainer = document.getElementById("cart-items");
+            let totalPrice = 0;
+
+            cartContainer.innerHTML = ""; // Vider avant d'afficher
+            cart.forEach(item => {
+                let productElement = document.createElement("div");
+                productElement.innerHTML = `
+                    <h2>${item.name}</h2>
+                    <p>Prix: ${item.price}€</p>
+                    <p>Quantité: ${item.quantity}</p>
+                    <button onclick="removeFromCart(${item.id})">Retirer</button>
+                `;
+                cartContainer.appendChild(productElement);
+                totalPrice += item.price * item.quantity;
+            });
+
+            document.getElementById("total-price").textContent = totalPrice;
+            updateCartCount();
+        }
+
+        // Supprimer un produit du panier
+        function removeFromCart(id) {
+            let cart = localStorage.getItem("cart");
+            cart = cart ? JSON.parse(cart) : [];
+
+            cart = cart.filter(item => item.id !== id); // Retirer l'élément
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            loadCart();
+        }
+
+        // Vider le panier
+        function clearCart() {
+            localStorage.removeItem("cart");
+            loadCart();
+        }
+
+        // Met à jour le nombre d'articles affiché dans le panier
+        function updateCartCount() {
+            let cart = localStorage.getItem("cart");
+            cart = cart ? JSON.parse(cart) : [];
+            let count = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').textContent = count;
+        }
+
+        // Charger les données du panier au chargement de la page
+        document.addEventListener("DOMContentLoaded", loadCart);
+    </script>
+</body>
+</html>
