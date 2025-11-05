@@ -1,0 +1,102 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #c19999;*/
+    background-color: #FAF3E0;
+    
+}
+
+/* En-tête */
+header {
+    
+    background-color: rgba(109, 76, 145, 0.3); /* Plus de transparence */
+    /*color: white*/
+    color: FAF3E0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    font-size: 10px;
+}
+
+
+
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+
+
+.contact-form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+    max-width: 500px;
+    margin: 50px auto;
+    
+    
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ac6060;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    
+}
+
+button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}

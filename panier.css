@@ -1,0 +1,180 @@
+/* Importer une belle police */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background-color: #c19999;*/
+    background-color: #FAF3E0;
+    
+}
+
+/* En-tête */
+header {
+    
+    background-color: rgba(109, 76, 145, 0.3); /* Plus de transparence */
+    /*color: white*/
+    color: FAF3E0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 50px;
+    font-size: 10px;
+}
+
+
+
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Great Vibes', cursive;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.votrepanier-section{
+    font-size: 30px;
+
+}
+
+
+
+/* ✅ SECTION PANIER */
+
+.cart-section {
+    background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-section li {
+    background: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-section button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-section button:hover {
+    background: #c0392b;
+}
+
+
+
+
+
+/*.cart-section {
+    background: white;
+    max-width: 1000px;
+
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cart-section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    background: #ecf0f1;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-items li button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cart-items li button:hover {
+    background: #c0392b;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #2ecc71; /* Vert */
+/*}*/
+
+button {
+    background: #3498db; /* Bleu */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* ✅ LIEN RETOUR */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 18px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
